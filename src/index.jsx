@@ -6,8 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import Survey from './pages/Survey'
-// import ClientForm from './components/ClientForm'
-// import FreelanceForm from './components/FreelanceForm'
+import Freelances from './pages/Freelances'
 import Error from './components/Error'
 
 
@@ -18,6 +17,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Freelances" element={<Freelances />} />
         <Route path="/survey/:questionNumber" element={<Survey />} />
         <Route path="*" element={<Error />} />
       </Routes>
