@@ -6,8 +6,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import Survey from './pages/Survey'
-
-
+// import ClientForm from './components/ClientForm'
+// import FreelanceForm from './components/FreelanceForm'
+import Error from './components/Error'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,11 +18,8 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/survey" element={<Survey />}>
-          { /* Nous imbriquons nos composants dans survey */}
-          {/* <Route path="client" element={<ClientForm />} /> */}
-          {/* <Route path="freelance" element={<FreelanceForm />} /> */}
-        </Route>
+        <Route path="/survey/:questionNumber" element={<Survey />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </Router>
   </React.StrictMode>
